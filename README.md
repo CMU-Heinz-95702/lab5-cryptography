@@ -5,6 +5,7 @@
 In lecture, we discussed the famous key exchange problem. How do two parties,
 operating at a distance, agree on a symmetric key? The approach we study in this
 lab (a classic cryptographic protocol) was invented prior to the invention of RSA.
+It was one of the very first public key approaches invented.
 
 In this lab, you will modify existing UDP-based client and server programs to
 implement the Diffie-Hellman-Merkle key exchange.
