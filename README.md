@@ -179,7 +179,7 @@ https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
 3. Implement the algorithm by changing the client and server code. The client
 will be Alice and the server will be Bob. As described in the article on the Diffie-
 Hellman Key exchange, Alice and Bob will begin with a modulus p = 23 and a base g = 5.
-Have ALice choose a secret random integer a between 2 and 22. Have Bob choose a
+Have Alice choose a secret random integer a between 2 and 22. Have Bob choose a
 secret random integer b between 2 and 22.
 
 Have Alice transmit g^a mod p to Bob. As a response to the transmission from Alice, Bob
