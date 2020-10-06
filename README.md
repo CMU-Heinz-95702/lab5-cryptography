@@ -1,8 +1,11 @@
-# lab5-cryptography
+# lab5-cryptography    95-702 Lab 5
 
-Diffie-Hellman-Merkle Key Exchange 
+## Diffie-Hellman-Merkle Key Exchange
 
-95-702 Lab 5 
+In lecture, we discussed the famous key exchange problem. How do two parties,
+operating at a distance, agree on a symmetric key. The approach we study in this
+lab (a classic cryptographic protocol) was invented prior to the invention of RSA.
+
 
 In this lab, you will modify existing UDP-based client and socket programs to
 implement the Diffie-Hellman-Merkle key exchange.
