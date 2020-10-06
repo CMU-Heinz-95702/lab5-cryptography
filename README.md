@@ -1,4 +1,4 @@
-# Lab5 Cryptographic Protocols               95-702 Lab 5
+# 95-702 Lab5 Cryptographic Protocols          
 
 ## Diffie-Hellman-Merkle Key Exchange
 
