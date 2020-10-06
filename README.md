@@ -6,12 +6,163 @@ In lecture, we discussed the famous key exchange problem. How do two parties,
 operating at a distance, agree on a symmetric key. The approach we study in this
 lab (a classic cryptographic protocol) was invented prior to the invention of RSA.
 
-
 In this lab, you will modify existing UDP-based client and socket programs to
 implement the Diffie-Hellman-Merkle key exchange.
 
-1. Download UDPServer.java and UDPClient.java. Create an IntelliJ project with a
+1. Copy UDPServer.java and UDPClient.java. Create an IntelliJ project with a
 package named cmu.edu.ds; copy the two classes into this package.
+
+UDPClient.java
+
+```
+package cmu.edu.ds;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.util.Scanner;
+
+/*
+Based on Coulouris UDP socket code
+ */
+public class UDPClient {
+    private DatagramSocket socket = null;
+    private InetAddress host = null;
+    private int port;
+
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int value = Integer.parseInt(keyboard.nextLine());
+        System.out.println("value = " + value);
+        UDPClient udpClient = new UDPClient();
+        udpClient.init("localhost", 7272);
+        udpClient.send(Integer.toString(value));
+        value = Integer.parseInt(udpClient.receive());
+        System.out.println("Answer: " + value);
+        udpClient.close();
+    }
+
+    private void init(String hostname, int portNumber) {
+        try {
+            host = InetAddress.getByName(hostname);
+            port = portNumber;
+            socket = new DatagramSocket();
+        } catch (SocketException e) {
+            System.out.println("Socket error " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IO error " + e.getMessage());
+        }
+    }
+
+    private void send(String message) {
+        byte[] m = message.getBytes();
+        DatagramPacket packet = new DatagramPacket(m, m.length, host, port);
+        try {
+            socket.send(packet);
+        } catch (IOException e) {
+            System.out.println("IO error " + e.getMessage());
+        }
+    }
+
+    private String receive() {
+        byte[] answer = new byte[256];
+        DatagramPacket reply = new DatagramPacket(answer, answer.length);
+        try {
+            socket.receive(reply);
+        } catch (IOException e) {
+            System.out.println("IO error " + e.getMessage());
+        }
+        return(new String(reply.getData(), 0, reply.getLength()));
+
+    }
+
+    private void close() {
+        if (socket != null) socket.close();
+    }
+}
+
+```
+
+UDPServer.java
+
+```
+package cmu.edu.ds;
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+
+/*
+Based on Coulouris UDP socket code
+ */
+public class UDPServer {
+    private DatagramSocket socket = null;
+    private InetAddress inetAddress = null;
+    private int port;
+
+    public static void main(String[] args) {
+        UDPServer udpServer = new UDPServer();
+        udpServer.init(7272);
+        int value = Integer.parseInt(udpServer.receive());
+        System.out.println("Server received: " + value);
+        value++;
+        String message = Integer.toString(value);
+        udpServer.send(message);
+        udpServer.close();
+    }
+
+    private void init(int portnumber) {
+        try {
+            socket = new DatagramSocket(portnumber);
+            System.out.println("Server socket created");
+        } catch (SocketException e) {
+            System.out.println("Socket error " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IO error " + e.getMessage());
+        }
+    }
+
+    private void send(String message) {
+        byte[] buffer = new byte[256];
+        buffer = message.getBytes();
+        DatagramPacket reply = new DatagramPacket(buffer, buffer.length, inetAddress, port);
+        try {
+            socket.send(reply);
+        } catch (SocketException e) {
+            System.out.println("Socket error " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IO error " + e.getMessage());
+        }
+
+    }
+
+    private String receive() {
+        byte[] buffer = new byte[256];
+        DatagramPacket request = new DatagramPacket(buffer, buffer.length);
+
+        try {
+            socket.receive(request);
+            inetAddress = request.getAddress();
+            port = request.getPort();
+        } catch (SocketException e) {
+            System.out.println("Socket error " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IO error " + e.getMessage());
+        }
+        return new String(request.getData(), 0, request.getLength());
+    }
+
+    private void close() {
+        if (socket != null) socket.close();
+    }
+}
+
+```
 
 Compile and run the server code first. If an exception is thrown, change the
 port number and try again (and use that port number in the client). Then compile
