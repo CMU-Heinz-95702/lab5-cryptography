@@ -3,7 +3,7 @@
 ## Diffie-Hellman-Merkle Key Exchange
 
 In lecture, we discussed the famous key exchange problem. How do two parties,
-operating at a distance, agree on a symmetric key. The approach we study in this
+operating at a distance, agree on a symmetric key? The approach we study in this
 lab (a classic cryptographic protocol) was invented prior to the invention of RSA.
 
 In this lab, you will modify existing UDP-based client and socket programs to
