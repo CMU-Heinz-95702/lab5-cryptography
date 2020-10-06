@@ -6,7 +6,7 @@ In lecture, we discussed the famous key exchange problem. How do two parties,
 operating at a distance, agree on a symmetric key? The approach we study in this
 lab (a classic cryptographic protocol) was invented prior to the invention of RSA.
 
-In this lab, you will modify existing UDP-based client and socket programs to
+In this lab, you will modify existing UDP-based client and server programs to
 implement the Diffie-Hellman-Merkle key exchange.
 
 1. Copy UDPServer.java and UDPClient.java. Create an IntelliJ project with a
