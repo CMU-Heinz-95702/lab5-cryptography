@@ -167,7 +167,7 @@ public class UDPServer {
 
 Compile and run the server code first. If an exception is thrown, change the
 port number and try again (and use that port number in the client). Then compile
-and run the client code. Enter an integer and then verify that the client
+and run the client code. Enter an integer into the running client and then verify that the client
 receives back the integer that you entered + 1.
 
 :checkered_flag:**This is the checkpoint for this lab. Show your TA that you have the client and server
