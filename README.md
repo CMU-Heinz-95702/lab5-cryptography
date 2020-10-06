@@ -9,8 +9,8 @@ lab (a classic cryptographic protocol) was invented prior to the invention of RS
 In this lab, you will modify existing UDP-based client and server programs to
 implement the Diffie-Hellman-Merkle key exchange.
 
-1. Copy UDPServer.java and UDPClient.java. Create an IntelliJ project with a
-package named cmu.edu.ds; copy the two classes into this package.
+1. Copy UDPClient.java and UDPServer.java. Create an IntelliJ project with a
+package named "cmu.edu.ds". Paste the two classes into this package.
 
 UDPClient.java
 
