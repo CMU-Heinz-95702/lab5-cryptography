@@ -170,9 +170,6 @@ port number and try again (and use that port number in the client). Then compile
 and run the client code. Enter an integer into the running client and then verify that the client
 receives back the integer that you entered + 1.
 
-:checkered_flag:**This is the checkpoint for this lab. Show your TA that you have the client and server
-running.**
-
 2. Read the following article about the Diffie-Hellman Key Exchange algorithm:
 https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
 
@@ -210,6 +207,7 @@ random values for a and b that are 2,046 bits in length.
 public BigInteger(int numBits, Random rnd)
 
 We can leave the value of g at 5.
-
+<!---
 :checkered_flag:**Show your TA that Alice and Bob are able to arrive at a shared secret using these very
 large BigIntegers.**
+-->
