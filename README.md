@@ -217,7 +217,6 @@ public BigInteger(int numBits, Random rnd)
 
 We can leave the value of g at 5.
 
-:checkered_flag:**Show your TA that Alice and Bob are able to arrive at a shared secret using these very
-large BigIntegers. This is for 3/4 of a point.**
+For this lab to be complete, you need for both players to have a shared secret.
 
 :checkered_flag: Answer question 5 on the Lab5_Quiz on Canvas.
