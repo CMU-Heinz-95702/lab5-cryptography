@@ -170,10 +170,14 @@ port number and try again (and use that port number in the client). Then compile
 and run the client code. Enter an integer into the running client and then verify that the client
 receives back the integer that you entered + 1.
 
-:checkered_flag: This is the 1/4 point checkpoint for this lab. Show your TA that you have a working solution. You will need to do a very quick demonstration for your TA.
+:checkered_flag: Examine the send method in the server code. Add a statement to the send method so that the client's port is displayed. Run the server and client pair several times and answer question 1 on the Lab5_Quiz on Canvas.
 
 2. Read the following article about the Diffie-Hellman Key Exchange algorithm:
 https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
+
+:checkered_flag: Suppose Alice and Bob agree on the public parameters p = 23 and g = 5.  Suppose Alice has a secret key a = 4 and Bob has a secret key b = 3. What will be their shared secret? Answer question 2 on the Lab5_Quiz on Canvas.
+
+:checkered_flag: As before, suppose Alice and Bob agree on the public parameters p = 23 and g = 5.  Suppose Alice has a secret key a = 3 and Bob has a secret key b = 2. What will be their shared secret? Answer question 3 on the Lab5_Quiz on Canvas.
 
 3. Implement the algorithm by changing the client and server code. The client
 will be Alice and the server will be Bob. As described in the article on the Diffie-
@@ -188,6 +192,8 @@ Both Alice and Bob compute s (the shared secret.)
 
 On Alice's console, display the secret integer that she now shares with Bob (s). On Bob's
 console, display the secret integer that he shares with Alice (s).
+:checkered_flag: Answer question 4 on the Lab5_Quiz on Canvas.
+
 
 4. The modulus p above is too small. Change your modulus p to the following integer.
 This integer is very probably prime. It is about 2,048 bits in size. Use Java's
@@ -212,3 +218,5 @@ We can leave the value of g at 5.
 
 :checkered_flag:**Show your TA that Alice and Bob are able to arrive at a shared secret using these very
 large BigIntegers. This is for 3/4 of a point.**
+
+:checkered_flag: Answer question 5 on the Lab5_Quiz on Canvas.
