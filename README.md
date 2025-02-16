@@ -192,6 +192,7 @@ Both Alice and Bob compute s (the shared secret.)
 
 On Alice's console, display the secret integer that she now shares with Bob (s). On Bob's
 console, display the secret integer that he shares with Alice (s).
+
 :checkered_flag: Answer question 4 on the Lab5_Quiz on Canvas.
 
 
