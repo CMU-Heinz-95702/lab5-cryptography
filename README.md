@@ -129,8 +129,8 @@ public class UDPServer {
     }
 
     private void send(String message) {
-        byte[] buffer = new byte[256];
-        buffer = message.getBytes();
+      
+        byte[] buffer = message.getBytes();
         DatagramPacket reply = new DatagramPacket(buffer, buffer.length, inetAddress, port);
         try {
             socket.send(reply);
