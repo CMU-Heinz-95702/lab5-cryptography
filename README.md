@@ -215,4 +215,6 @@ We can leave the value of g at 5.
 
 For this lab to be complete, you need for both players to have a shared secret.
 
+Hint: You will need to increase your buffer sizes for these large integers.
+
 :checkered_flag: This is the .75 checkpoint for this lab. Show your TA that the client and server have computed the same shared secret.
